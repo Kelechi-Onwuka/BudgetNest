@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - BudgetNest</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">💸 BudgetNest</div>
+        <nav>
+            <button onclick="location.href='/'">Home</button>
+            <button onclick="location.href='/transactions'">View Transactions</button>
+            <button onclick="location.href='/income'">Add Income</button>
+            <button onclick="location.href='/expense'">Add Expense</button>
+        </nav>
+        <div class="auth-buttons">
+            <span>Welcome back, {{ current_user.username }}!</span>
+            <a href="{{ url_for('auth.logout') }}"><button>Logout</button></a>
+        </div>
+    </header>
+
+    <main>
+        <div class="page active">
+            <h2>Dashboard</h2>
+            <p>{{ today }}</p>
+            <div class="card-container">
+                <div class="card">Income: ${{ total_income }}</div>
+                <div class="card">Expenses: ${{ total_expenses }}</div>
+                <div class="card">Remaining: ${{ remaining }}</div>
+                <a href="/transactions">View Transactions</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Made with ❤️ by BudgetNest Team</p>
+    </footer>
+</body>
+</html>

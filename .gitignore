@@ -1,0 +1,10 @@
+# Ignore the virtual environment folder
+venv/
+
+# Ignore Python byte-compiled files and __pycache__ directories
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignore the local SQLite database (if you don't need it versioned)
+instance/budgetnest.db

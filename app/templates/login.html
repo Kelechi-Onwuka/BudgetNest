@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - BudgetNest</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='login_signup.css') }}">
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+  <h1>Login</h1>
+  <form method="POST" action="{{ url_for('auth.login') }}">
+    <input type="text" name="username" placeholder="Username" required><br><br>
+    <input type="password" name="password" placeholder="Password" required><br><br>
+    <button type="submit">Login</button>
+    <button onclick="window.location.href='/'">Exit</button>
+  </form>
+  <p>
+    Don't have an account? <a href="{{ url_for('auth.signup') }}">Sign up here</a>
+  </p>
+  <p>
+    <a href="{{ url_for('auth.reset_password_request') }}">Forgot your password?</a>
+  </p>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class="flashes">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+</body>
+</html>

@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BudgetNest</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <header>
+    <div class="logo">💸 BudgetNest</div>
+    <nav>
+      <button onclick="location.href='/'">Home</button>
+      <button onclick="location.href='/dashboard'">Dashboard</button>
+      <button onclick="location.href='/income'">Add Income</button>
+      <button onclick="location.href='/expense'">Add Expense</button>
+    </nav>
+    <div class="auth-buttons">
+      {% if current_user.is_authenticated %}
+        <span>Welcome back, {{ current_user.username }}!</span>
+        <a href="{{ url_for('auth.logout') }}"><button>Logout</button></a>
+      {% else %}
+        <a href="{{ url_for('auth.login') }}"><button>Login</button></a>
+        <a href="{{ url_for('auth.signup') }}"><button>Sign Up</button></a>
+      {% endif %}
+    </div>
+  </header>
+
+  <main>
+    <!-- Home -->
+    <section id="home" class="page active">
+      <h1>Welcome to BudgetNest</h1>
+      <p>Your smart monthly budget planner ✨</p>
+      
+      {% if current_user.is_authenticated %}
+        <div class="call-to-action">
+          <p>Ready to manage your finances?</p>
+          <button onclick="location.href='/dashboard'">Go to Dashboard</button>
+        </div>
+      {% else %}
+        <div class="call-to-action">
+          <p>Get started by creating an account!</p>
+          <button onclick="location.href='/signup'">Sign Up Now</button>
+        </div>
+      {% endif %}
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with ❤️ by BudgetNest Team</p>
+  </footer>
+</body>
+</html>
