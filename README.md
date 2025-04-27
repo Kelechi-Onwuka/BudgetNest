@@ -6,14 +6,13 @@ BudgetNest is a web application designed to help users create and manage a reali
 ## Features
 - **User Authentication:** Secure sign-up and login processes.
 - **Income & Expense Tracking:** Easily add, edit, and manage financial transactions.
-- **Budget Management:** Set monthly budgets and get recommendations.
-- **Visual Insights:** Graphical representation of spending vs. income.
+- **Visual Dashboard:** Summarizes income, expenses, and remaining balance.
 - **Database Integration:** Uses SQLite (via SQLAlchemy) for storing data.
 
 ## Technologies Used
 - **Backend:** Python, Flask, Flask-SQLAlchemy
 - **Database:** SQLite
-- **Frontend:** HTML, CSS, JavaScript (further developed as needed)
+- **Frontend:** HTML, CSS, JavaScript
 - **Version Control:** Git
 
 ## Project Structure
@@ -53,4 +52,11 @@ pip install -r requirements.txt
 
 python run.py
 Then, open your browser and navigate to http://127.0.0.1:5000/ to see the application in action.
+
+## Acknowledgments
+Developed as part of a collaborative group project.  
+I took the lead on front-end development, designing and building the user interface using HTML, CSS, and JavaScript.  
+I also finalized the income and expense tracking functionality, organized front-end assets, and helped define the overall technical structure of the project.
+
+
 
